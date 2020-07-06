@@ -13,12 +13,12 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk15on</artifactId>
-            <version>1.50</version>
+            <version>1.65</version>
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcmail-jdk15on</artifactId>
-            <version>1.50</version>
+            <version>1.65</version>
         </dependency>
         <dependency>
             <groupId>javax.mail</groupId>

@@ -6,7 +6,9 @@ import org.bouncycastle.cms.jcajce.JceKeyTransRecipient;
 import org.bouncycastle.cms.jcajce.JceKeyTransRecipientId;
 import org.bouncycastle.mail.smime.SMIMEEnveloped;
 import org.bouncycastle.mail.smime.SMIMEUtil;
+import ru.CryptoPro.Crypto.CryptoProvider;
 import ru.CryptoPro.JCP.JCP;
+import ru.CryptoPro.reprov.RevCheck;
 
 import javax.mail.Session;
 import javax.mail.internet.MimeBodyPart;
@@ -23,11 +25,14 @@ public class Decoder {
     public static void main(String... args){
         try {
             String filePath = "C:\\work\\eml_decoding\\";
+            Security.addProvider(new JCP()); // JCP
+            Security.addProvider(new RevCheck()); // RevCheck
+            Security.addProvider(new CryptoProvider()); // JCryptoP
 
             for (Provider provider: Security.getProviders()) {
                 System.out.println(provider.getName());
                 for (Provider.Service s: provider.getServices()){
-                    if (s.getType().equals("Cipher"))
+//                    if (s.getType().equals("Cipher"))
                         System.out.println("\t"+s.getType() + " " + s.getAlgorithm() + " " + s.getClassName());
                 }
             }

@@ -1,32 +1,23 @@
-import org.bouncycastle.cms.CMSEnvelopedData;
 import org.bouncycastle.cms.RecipientId;
 import org.bouncycastle.cms.RecipientInformation;
 import org.bouncycastle.cms.RecipientInformationStore;
 import org.bouncycastle.cms.jcajce.JceKeyTransEnvelopedRecipient;
 import org.bouncycastle.cms.jcajce.JceKeyTransRecipient;
 import org.bouncycastle.cms.jcajce.JceKeyTransRecipientId;
-import org.bouncycastle.operator.jcajce.JcaContentVerifierProviderBuilder;
-import ru.CryptoPro.Crypto.CryptoProvider;
-import ru.CryptoPro.JCP.JCP;
-import ru.CryptoPro.JCP.tools.Array;
 import org.bouncycastle.mail.smime.SMIMEEnveloped;
 import org.bouncycastle.mail.smime.SMIMEUtil;
+import ru.CryptoPro.JCP.JCP;
 
-import javax.crypto.KeyAgreement;
 import javax.mail.Session;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.Provider;
 import java.security.Security;
 import java.security.cert.X509Certificate;
-import java.util.Collection;
 import java.util.Properties;
-import java.util.Set;
 
 public class Decoder {
     public static void main(String... args){

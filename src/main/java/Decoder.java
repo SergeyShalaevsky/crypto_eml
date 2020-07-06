@@ -27,7 +27,9 @@ public class Decoder {
             String filePath = "C:\\work\\eml_decoding\\";
             Security.addProvider(new JCP()); // JCP
             Security.addProvider(new RevCheck()); // RevCheck
-            Security.addProvider(new CryptoProvider()); // JCryptoP
+            Provider cryproProvider = new CryptoProvider();
+            cryproProvider.setProperty("KeyAgreement.1.2.643.7.1.1.1.1", "ru.CryptoPro.Crypto.Key.KeyAgreement");
+            Security.addProvider(cryproProvider); // JCryptoP
 
             for (Provider provider: Security.getProviders()) {
                 System.out.println(provider.getName());
